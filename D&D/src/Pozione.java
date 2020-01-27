@@ -30,13 +30,23 @@ public class Pozione extends Oggetto{
 			break;
 		case 3:
 			nome=("danno base");
-			rarità=7;
+			rarità=3;
 			costo=10;
 			peso=1.f;
 			colore="verde plutonio";
 			isLancio=true;
 			effetto=false;
 			modHp=20;
+			break;
+		case 4:
+			nome=("danno OP");
+			rarità=9;
+			costo=300;
+			peso=1.f;
+			colore="nero pece";
+			isLancio=true;
+			effetto=false;
+			modHp=80;
 			break;
 
 		}

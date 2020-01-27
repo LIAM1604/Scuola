@@ -24,6 +24,7 @@ public class Personaggio {
 	public int modint;
 	public int modsag;
 	public int modcar;
+	public Oggetto[]inventario;
 
 	public Personaggio(Arma spad, Armatura armatur,String nom,String clas,String raz) {
 		livello=(int) (Math.random()*20+1);
@@ -48,6 +49,10 @@ public class Personaggio {
 		difesa=10+moddes+armatura.CA;
 		txc=(int) (Math.random()*20+1)+livello+modf+spada.magia;
 		hp=((int) (Math.random()*10+1)+modcos)*livello;
+		inventario=new Oggetto[10+modf];
+		for(int i=0;i<inventario.length;i++) {
+			inventario[i]=new Oggetto();
+		}
 	}
 	public void combattimento(Personaggio pers) {
 		int i = 1;
@@ -92,6 +97,7 @@ public class Personaggio {
 			System.out.println("Liam ha vinto ");
 		}
 	}
+	
 	public static void main(String[]args) throws NumberFormatException, IOException {
 		InputStreamReader input= new InputStreamReader(System.in);
 		BufferedReader tastiera=new BufferedReader(input);
