@@ -27,13 +27,13 @@ public class Pozione extends Oggetto{
 			isLancio=false;
 			effetto=true;
 			modHp=50;
-			break;
+			break;/*
 		case 3:
 			nome=("danno base");
 			rarità=3;
 			costo=10;
 			peso=1.f;
-			colore="verde plutonio";
+			colore="rosso";
 			isLancio=true;
 			effetto=false;
 			modHp=20;
@@ -48,7 +48,13 @@ public class Pozione extends Oggetto{
 			effetto=false;
 			modHp=80;
 			break;
-
+		//default!!!!!
+*/
+		}
+	}
+	public static void usaPozione(Personaggio pg, Pozione poz) {
+		for(int i=0;i<pg.inventario.length;i++) {
+			//if()
 		}
 	}
 }

@@ -62,45 +62,46 @@ public class Personaggio {
 			System.out.println("*********************************************");
 			System.out.println("Turno "+i);
 			System.out.println(" ");
-			System.out.println("     LIAM        		  "+"P2");
+			System.out.println("     "+this.nome+"        		  "+pers.nome);
 			System.out.println("HP:"+this.hp+"  TXC:"+this.txc+"          HP:"+pers.hp+"  TXC:"+pers.txc);
 			this.txc=(int) (Math.random()*10+1)+this.livello+this.modf+this.spada.magia;
 			pers.txc=(int) (Math.random()*10+1)+pers.livello+pers.modf+pers.spada.magia;
 
 			if(this.txc>=pers.difesa) {
 				pers.hp-=(this.spada.danno+this.modf);
-				System.out.println("p1 ha un txc di "+this.txc+" quindi "+"fa un danno di "+(this.spada.danno+this.modf));
+				System.out.println(this.nome+" ha un txc di "+this.txc+" quindi "+"fa un danno di "+(this.spada.danno+this.modf));
 			}else {
-				System.out.println("p1 ha un txc di "+this.txc+" quindi "+"missa il colpo");
+				System.out.println(this.nome+" ha un txc di "+this.txc+" quindi "+"missa il colpo");
 			}
 			System.out.println(" ");
 
 
 			System.out.println(" ");
 
-			System.out.println("     LIAM        		  "+"P2");
+			System.out.println("     "+this.nome+"        		  "+pers.nome);
 			System.out.println("HP:"+this.hp+"  TXC:"+this.txc+"          HP:"+pers.hp+"  TXC:"+pers.txc);
 				if(pers.hp>0) {
 								if(pers.txc>=this.difesa) {
 				this.hp-=pers.spada.danno;
-				System.out.println("p2 ha un txc di  "+pers.txc+" quindi "+"fa un danno di "+(this.spada.danno+this.modf));
+				System.out.println(pers.nome+" ha un txc di  "+pers.txc+" quindi "+"fa un danno di "+(this.spada.danno+this.modf));
 			}else {
-				System.out.println("p2 ha un txc di  "+pers.txc+" quindi "+"missa il colpo");
+				System.out.println(pers.nome+" ha un txc di  "+pers.txc+" quindi "+"missa il colpo");
 			}
 				}
 
 			i++;
 		}while(this.hp>0 && pers.hp>0);
 		if(this.hp<=0) {
-			System.out.println("p2 ha vinto ");
+			System.out.println(pers.nome+" ha vinto ");
 		}else {
-			System.out.println("Liam ha vinto ");
+			System.out.println(this.nome+" ha vinto ");
 		}
 	}
 	
 	public static void main(String[]args) throws NumberFormatException, IOException {
 		InputStreamReader input= new InputStreamReader(System.in);
 		BufferedReader tastiera=new BufferedReader(input);
+		/*
 		String nome1; String classe1 = null; String razza1 = null; int n;
 		do {
 			System.out.println("EIIII giocatore 1 dai un nome al tuo personaggio");
@@ -332,13 +333,16 @@ public class Personaggio {
 		}while(n!=1);
 		
 
-
+*/
 		Arma spa1=new Arma();
 		Armatura arm1=new Armatura();
-		Personaggio p1=new Personaggio(spa1,arm1,nome1,classe1,razza1);	
+		//Personaggio p1=new Personaggio(spa1,arm1,nome1,classe1,razza1);	
+		Personaggio p1=new Personaggio(spa1,arm1,"liam",null,null);	
 		Arma spa2=new Arma();
 		Armatura arm2=new Armatura();
-		Personaggio p2=new Personaggio(spa2,arm2,nome2,classe2,razza2);
+		//Personaggio p2=new Personaggio(spa2,arm2,nome2,classe2,razza2);
+		Personaggio p2=new Personaggio(spa2,arm2,"gino",null,null);
+		
 		
 		/* PER CONTROLLO CALCOLI
 		System.out.println("livello "+p1.livello);
