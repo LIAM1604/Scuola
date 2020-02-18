@@ -8,9 +8,10 @@ public class Personaggio {
 	public String classe;
 	public String razza;
 	public int hp;
+	public int hpmax;
 	public float difesa;
 	public int txc;
-	public Arma spada=new Arma();
+	public Spada spada=new Spada(false);
 	public Armatura armatura;
 	public int forza;
 	public int destrezza;
@@ -24,9 +25,10 @@ public class Personaggio {
 	public int modint;
 	public int modsag;
 	public int modcar;
+	public int monete;
 	public Oggetto[]inventario;
 
-	public Personaggio(Arma spad, Armatura armatur,String nom,String clas,String raz) {
+	public Personaggio(Spada spad, Armatura armatur,String nom,String clas,String raz) {
 		livello=(int) (Math.random()*20+1);
 		nome=nom;
 		classe=clas;
@@ -46,9 +48,11 @@ public class Personaggio {
 		modint=(intelligenza-10)/2;
 		modsag=(saggezza-10)/2;
 		modcar=(carisma-10)/2;
+		monete=0;
 		difesa=10+moddes+armatura.CA;
 		txc=(int) (Math.random()*20+1)+livello+modf+spada.magia;
 		hp=((int) (Math.random()*10+1)+modcos)*livello;
+		hpmax=hp;
 		inventario=new Oggetto[10+modf];
 		for(int i=0;i<inventario.length;i++) {
 			inventario[i]=new Oggetto();
@@ -101,7 +105,7 @@ public class Personaggio {
 	public static void main(String[]args) throws NumberFormatException, IOException {
 		InputStreamReader input= new InputStreamReader(System.in);
 		BufferedReader tastiera=new BufferedReader(input);
-		/*
+		
 		String nome1; String classe1 = null; String razza1 = null; int n;
 		do {
 			System.out.println("EIIII giocatore 1 dai un nome al tuo personaggio");
@@ -333,12 +337,12 @@ public class Personaggio {
 		}while(n!=1);
 		
 
-*/
-		Arma spa1=new Arma();
+
+		Spada spa1=new Spada(true);
 		Armatura arm1=new Armatura();
 		//Personaggio p1=new Personaggio(spa1,arm1,nome1,classe1,razza1);	
 		Personaggio p1=new Personaggio(spa1,arm1,"liam",null,null);	
-		Arma spa2=new Arma();
+		Spada spa2=new Spada(true);
 		Armatura arm2=new Armatura();
 		//Personaggio p2=new Personaggio(spa2,arm2,nome2,classe2,razza2);
 		Personaggio p2=new Personaggio(spa2,arm2,"gino",null,null);
