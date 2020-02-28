@@ -1,12 +1,29 @@
 
 public class Pozione extends Oggetto{
-	private boolean effetto; //true = cura  false = danno
 	private String colore;
 	private boolean isLancio;
 	private int modHp;
+	public String getColore() {
+		return colore;
+	}
+	public void setColore(String colore) {
+		this.colore = colore;
+	}
+	public boolean isLancio() {
+		return isLancio;
+	}
+	public void setLancio(boolean isLancio) {
+		this.isLancio = isLancio;
+	}
+	public int getModHp() {
+		return modHp;
+	}
+	public void setModHp(int modHp) {
+		this.modHp = modHp;
+	}
 	public Pozione() {
 		int rand;
-		rand = (int) (Math.random()*5+1);
+		rand = (int) (Math.random()*2+1);
 		switch(rand) {
 		case 1:
 			nome=("cura base");
@@ -15,41 +32,20 @@ public class Pozione extends Oggetto{
 			peso=0.3f;
 			colore="verde";
 			isLancio=false;
-			effetto=true;
-			modHp=20;
+			
+			modHp=10;
 			break;
 		case 2:
-			nome=("cura OP");
+			nome=("cura forte");
 			rarità=7;
 			costo=250;
 			peso=1f;
 			colore="verde plutonio";
 			isLancio=false;
-			effetto=true;
-			modHp=50;
-			break;/*
-		case 3:
-			nome=("danno base");
-			rarità=3;
-			costo=10;
-			peso=1.f;
-			colore="rosso";
-			isLancio=true;
-			effetto=false;
-			modHp=20;
+			
+			modHp=30;
 			break;
-		case 4:
-			nome=("danno OP");
-			rarità=9;
-			costo=300;
-			peso=1.f;
-			colore="nero pece";
-			isLancio=true;
-			effetto=false;
-			modHp=80;
-			break;
-		//default!!!!!
-*/
+
 		}
 	}
 	public static void usaPozione(Personaggio pg, Pozione poz) {
