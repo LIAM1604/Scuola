@@ -1,6 +1,6 @@
-Goccia[] pioggia =new Goccia[200];
+Goccia[] pioggia =new Goccia[500];
 void setup() {
-  size(800, 600);
+  size(1920, 1080);
   for (int i=0; i<pioggia.length; i++) {
     pioggia[i] = new Goccia();
   }
